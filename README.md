@@ -7,7 +7,7 @@
 
 
 
-![image-20241129223641995](C:\Users\Charsiton\AppData\Roaming\Typora\typora-user-images\image-20241129223641995.png)
+![image-20241129223641995](C:\DATA\Code\Qt\usbip-qt\images\image-20241129223641995.png)
 
 第一个框显示已经附加的USB设备，左边的框显示运行的日志，右边的框显示usbip list -l的设备。
 
@@ -15,9 +15,9 @@
 
 选中已经附加的设备，点击断开，则会取消附加。
 
-![image-20241129223932417](C:\Users\Charsiton\AppData\Roaming\Typora\typora-user-images\image-20241129223932417.png)
+![image-20241129223932417](C:\DATA\Code\Qt\usbip-qt\images\image-20241129223932417.png)
 
-![image-20241129223940715](C:\Users\Charsiton\AppData\Roaming\Typora\typora-user-images\image-20241129223940715.png)
+![image-20241129223940715](C:\DATA\Code\Qt\usbip-qt\images\image-20241129223940715.png)
 
 # 致谢
 
