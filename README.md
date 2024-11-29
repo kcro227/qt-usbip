@@ -21,4 +21,4 @@
 
 # 致谢
 
-github@cezanne -> https://github.com/cezanne/usbip-win
+[github@cezanne](https://github.com/cezanne) -> [usbip-win](https://github.com/cezanne/usbip-win)
