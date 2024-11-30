@@ -11,6 +11,8 @@
 #include <QTimer>
 #include <QVector>
 
+#define USBIP_PATH "./usbip-win/usbip.exe"
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -45,5 +47,6 @@ private:
     QProcess* usbip_list_pro;
     QVector<attach_list_t> attach_list;
     QStandardItemModel* model;
+    QString appPath;
 };
 #endif // MAINWINDOW_H

@@ -8,6 +8,8 @@ MainWindow::MainWindow(QWidget* parent)
     ui->setupUi(this);
     this->setWindowIcon(QIcon(":/icon/icon.ico"));
     //  QProcess *usbip_process;
+    appPath = QCoreApplication::applicationDirPath() + USBIP_PATH;
+
     usbip_process
         = new QProcess(this);
     usbip_list_pro = new QProcess(this);
@@ -29,7 +31,8 @@ void MainWindow::on_connect_button_clicked()
         ui->log_view->append(QString("请输入IP"));
     } else {
         QString ip = ui->lineEdit_ip->text();
-        QString Cmd = "usbip.exe attach -r " + ip.replace("\"", " ") + " -b 1-1";
+        //        QString Cmd = USBIP_PATH + "attach -r " + ip.replace("\"", " ") + " -b 1-1";
+        QString Cmd = QString("%1 attach -r %2 -b 1-1 ").arg(appPath).arg(ip);
         usbip_process->start(Cmd);
         qDebug() << Cmd;
     }
@@ -65,7 +68,7 @@ void MainWindow::on_disconnect_button_clicked()
             int portNumber = match.captured(1).toInt(); // 提取第一个括号内匹配的数字
             qDebug() << "Port number:" << portNumber;
             // 获取到port后，将其detach
-            QString Cmd = QString("usbip.exe detach -p %1").arg(portNumber);
+            QString Cmd = QString("%1 detach -p %2").arg(appPath).arg(portNumber);
             usbip_process->start(Cmd);
             qDebug() << Cmd;
             if (!usbip_process->waitForStarted()) {
@@ -135,8 +138,8 @@ void MainWindow::listtask()
 {
 
     qDebug() << "start list task";
-
-    usbip_list_pro->start("usbip.exe list -l");
+    QString Cmd = QString("%1 list -l").arg(appPath);
+    usbip_list_pro->start(Cmd);
     if (!usbip_list_pro->waitForStarted()) {
         qDebug() << "usblist task start fail";
     } else {
